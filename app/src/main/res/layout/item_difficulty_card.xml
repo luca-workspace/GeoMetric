@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_difficulty_card.xml
+    One of the three difficulty cards (Easy / Medium / Hard).
+    Image on the left, text + percentage on the right.
+    Aspect ratio of the image is fixed so all three cards are the same height.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/surface"
+    app:strokeColor="@color/border"
+    app:strokeWidth="1dp"
+    app:cardElevation="0dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- IMAGE -->
+        <ImageView
+            android:id="@+id/iv_difficulty_image"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null" />
+
+        <!-- TEXT AREA -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp">
+
+            <!-- "Easy" / "Medium" / "Hard" -->
+            <TextView
+                android:id="@+id/tv_difficulty_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Easy"
+                android:textSize="@dimen/text_card_title"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="2dp" />
+
+            <!-- e.g. "195 questions · 6 blocks" -->
+            <TextView
+                android:id="@+id/tv_difficulty_meta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="195 questions · 6 blocks"
+                android:textSize="@dimen/text_card_count"
+                android:textColor="@color/text_hint"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Completion percentage -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="6dp">
+
+                <TextView
+                    android:id="@+id/tv_completion_pct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="0% complete"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_secondary" />
+
+                <!-- Lock icon: visible only when 0 blocks are unlocked (shouldn't
+                     happen since block 0 is always unlocked, but kept as safeguard) -->
+                <ImageView
+                    android:id="@+id/iv_lock"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_lock"
+                    app:tint="@color/text_hint"
+                    android:contentDescription="Locked"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Thin progress bar: green = passed blocks, red = failed/partial -->
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress_difficulty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:trackThickness="5dp"
+                app:trackCornerRadius="3dp"
+                app:trackColor="@color/progress_track"
+                app:indicatorColor="@color/accent_green"
+                android:progress="0"
+                android:max="100" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

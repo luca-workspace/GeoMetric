@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    res/drawable/ic_star_empty.xml
+    Outline star in a muted grey-violet so it's visible on the dark card
+    background without competing with the filled yellow stars.
+    Replace with a vector asset from Material Symbols if preferred.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="9dp"
+    android:height="9dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!--
+        Star outline path (Material Symbols "star" outlined variant).
+        Stroke is simulated by drawing the outer star path and cutting out
+        the inner shape — simplest approach without needing strokeWidth
+        in older vector drawables.
+
+        For a one-liner alternative: use Android Studio Vector Asset wizard,
+        search "star_outline" or "star_border" and tint it @color/star_empty.
+    -->
+    <path
+        android:fillColor="@color/star_empty"
+        android:pathData="M12,17.27L18.18,21l-1.64,-7.03L22,9.24l-7.19,-0.61L12,2
+                          L9.19,8.63L2,9.24l5.46,4.73L5.82,21z" />
+
+</vector>

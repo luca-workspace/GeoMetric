@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- BACKGROUNDS -->
+    <color name="bg_primary">#FF07090F</color>
+    <color name="surface">#FF0E1220</color>
+    <color name="border">#FF1A2040</color>
+
+    <!-- TEXT -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFAAb0CC</color>
+    <color name="text_hint">#FF3A4470</color>
+
+    <!-- XP PILL -->
+    <color name="xp_bg">#FF0D1235</color>
+    <color name="xp_border">#FF4A80FF</color>
+    <color name="xp_text">#FF7A9FFF</color>
+    <color name="xp_dot">#FF4A80FF</color>
+
+    <!-- ACCENT -->
+    <color name="accent_purple">#FF4A80FF</color>
+    <color name="accent_red">#FFFF6060</color>
+    <color name="accent_green">#FF20C997</color>
+    <color name="accent_orange">#FFF0A030</color>
+
+    <!-- PROGRESS RING TRACK -->
+    <color name="progress_track">#33FFFFFF</color>
+
+    <!-- STARS -->
+    <color name="star_filled">#FFFBBF24</color>
+    <color name="star_empty">#FF1E2850</color>
+
+    <!-- ANSWERS FEEDBACK COLOURS -->
+    <color name="answer_correct">#FF22C55E</color>
+    <color name="answer_correct_bg">#1A22C55E</color>
+    <color name="answer_wrong">#FFEF4444</color>
+    <color name="answer_wrong_bg">#1AEF4444</color>
+
+</resources>

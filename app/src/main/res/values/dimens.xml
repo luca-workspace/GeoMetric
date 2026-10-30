@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_nav_label">11sp</dimen>
+
+    <dimen name="text_app_title">27sp</dimen>
+    <dimen name="text_xp_pill">15sp</dimen>
+    <dimen name="text_streak_symbol">15sp</dimen>
+    <dimen name="text_streak_label">15sp</dimen>
+    <dimen name="text_section_label">11sp</dimen>
+    <dimen name="text_card_title">14sp</dimen>
+    <dimen name="text_card_count">13sp</dimen>
+
+    <dimen name="text_question">19sp</dimen>
+    <dimen name="text_option">15sp</dimen>
+    <dimen name="text_hint">12sp</dimen>
+
+    <dimen name="text_settings_title">16sp</dimen>
+    <dimen name="text_settings_sub">13sp</dimen>
+</resources>

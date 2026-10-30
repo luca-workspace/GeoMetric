@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_category_card.xml
+    Reusable card for each quiz category.
+-->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="18dp"
+    app:cardBackgroundColor="@color/surface"
+    app:strokeColor="@color/border"
+    app:strokeWidth="1dp"
+    app:cardElevation="0dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- IMAGE AREA -->
+        <ImageView
+            android:id="@+id/iv_category_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="W,1:1.05" />
+
+        <!-- gradient fade at bottom of image -->
+        <View
+            android:id="@+id/view_image_fade"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/gradient_image_fade"
+            app:layout_constraintBottom_toBottomOf="@id/iv_category_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- PROGRESS RING (top-right corner) -->
+        <!--
+            CircularProgressIndicator from Material 1.12+
+            trackColor = transparent ring background
+            indicatorColor = accent color set per category in code
+        -->
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progress_ring"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:indicatorSize="28dp"
+            app:trackThickness="2.5dp"
+            app:trackColor="@color/progress_track"
+            app:indicatorColor="@color/accent_purple"
+            android:progress="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- FOOTER -->
+        <LinearLayout
+            android:id="@+id/ll_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_category_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Category name -->
+            <TextView
+                android:id="@+id/tv_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category name"
+                android:textSize="@dimen/text_card_title"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="6dp" />
+
+            <!-- Count + stars row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_question_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="x questions"
+                    android:textSize="@dimen/text_card_count"
+                    android:textColor="@color/text_hint" />
+
+                <!-- Star rating (3 ImageViews, set src in code) -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/star_1"
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:src="@drawable/ic_star_filled"
+                        android:contentDescription="@null" />
+
+                    <ImageView
+                        android:id="@+id/star_2"
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:layout_marginStart="3dp"
+                        android:src="@drawable/ic_star_empty"
+                        android:contentDescription="@null" />
+
+                    <ImageView
+                        android:id="@+id/star_3"
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:layout_marginStart="3dp"
+                        android:src="@drawable/ic_star_empty"
+                        android:contentDescription="@null" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

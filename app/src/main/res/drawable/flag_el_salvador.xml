@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/flag_el_salvador_part01" />
+    <item android:drawable="@drawable/flag_el_salvador_part02" />
+    <item android:drawable="@drawable/flag_el_salvador_part03" />
+    <item android:drawable="@drawable/flag_el_salvador_part04" />
+    <item android:drawable="@drawable/flag_el_salvador_part05" />
+    <item android:drawable="@drawable/flag_el_salvador_part06" />
+    <item android:drawable="@drawable/flag_el_salvador_part07" />
+    <item android:drawable="@drawable/flag_el_salvador_part08" />
+    <item android:drawable="@drawable/flag_el_salvador_part09" />
+</layer-list>

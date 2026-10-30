@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_block_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="14dp"
+    app:cardBackgroundColor="@color/surface"
+    app:strokeColor="@color/border"
+    app:strokeWidth="1dp"
+    app:cardElevation="0dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <!--
+        LinearLayout instead of ConstraintLayout: simpler vertical stacking,
+        no risk of missing bottom constraints causing content to be clipped.
+    -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp">
+
+        <!-- Top row: block number + best score -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_block_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Block 1"
+                android:textSize="@dimen/text_settings_title"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <!-- "9 / 10" or "—" if never played -->
+            <TextView
+                android:id="@+id/tv_best_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="—"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary" />
+
+            <!-- Lock icon: shown instead of score when locked -->
+            <ImageView
+                android:id="@+id/iv_block_lock"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_lock"
+                app:tint="@color/text_hint"
+                android:contentDescription="Locked"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!--
+            Score bar: single LinearProgressIndicator.
+            trackColor switches to answer_wrong_bg when there are wrong answers,
+            giving the visual impression of a red remainder behind the green fill.
+            Hidden and replaced by view_never_played when bestScore == -1.
+        -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/bar_correct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:trackThickness="6dp"
+            app:trackCornerRadius="3dp"
+            app:trackColor="@color/progress_track"
+            app:indicatorColor="@color/answer_correct"
+            android:progress="0"
+            android:max="10"
+            android:visibility="gone" />
+
+        <!-- Grey placeholder when block has never been played -->
+        <View
+            android:id="@+id/view_never_played"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/bg_score_bar_empty"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
