@@ -8,6 +8,10 @@ The app allows users to test their skills across four main geographical categori
 
 Whether you are trying to guess a country from its flag or identify a famous monument from a photo, the app provides a fun and intuitive way to learn geography.
 
+## 📱 Screenshots
+
+<img src="images/screenshot.jpg" width="500" alt="App Preview">
+
 ## ✨ Features
 
 *   **4 Quiz Categories:** Choose between Capitals, Flags, Maps, and Monuments.
